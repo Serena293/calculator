@@ -6,18 +6,19 @@ const display = document.querySelector('.screen');
 let whateverNumber;
 let whateverNumber1 = null;
 function displayUpdate(element) {
-    if (display.textContent === '0') {
-        display.textContent = element.textContent;
-    } else {
-        display.textContent += element.textContent;
-        whateverNumber = display.textContent
-    }
+  if (display.textContent === '0') {
+    display.textContent = element.textContent;
+  } else {
+    display.textContent += element.textContent;
+  }
+  return display.textContent
 }
-console.log(whateverNumber)
-numberArray.forEach(numbers => {
-  numbers.addEventListener('click', () => displayUpdate(numbers));
+numberArray.forEach(number => {
+  number.addEventListener('click', () => {
+    whateverNumber = displayUpdate(number);
+    console.log(whateverNumber)
+  });
 });
-
 operatorArray.forEach(operators => {
   operators.addEventListener('click', () => {
     // let a = operators.textContent;
