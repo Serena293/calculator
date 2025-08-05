@@ -100,7 +100,11 @@ equalBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", clear);
 dotBtn.addEventListener("click", ()=>{ 
   if (!display.textContent.includes('.')) {
-    displayUpdate(dotBtn.textContent);
+    if (display.textContent === '' || display.textContent === '0') {
+      display.textContent = '0.';
+    } else {
+      displayUpdate(dotBtn.textContent);
+    }
   }})
 
 
