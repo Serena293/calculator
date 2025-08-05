@@ -6,6 +6,7 @@ const equalBtn = document.querySelector(".equal");
 const dotBtn = document.querySelector(".dot")
 
 const display = document.querySelector(".screen");
+const deleteBtn = document.querySelector(".delete");
 
 let currentInput = "0";
 let firstNumber = null;
@@ -21,6 +22,7 @@ function clear() {
   secondNumber = null;
   operatorSelected = null;
   resetScreen = false;
+  dotBtn.disabled = false; 
 }
 
 function displayUpdate(value) {
@@ -100,3 +102,20 @@ dotBtn.addEventListener("click", ()=>{
   if (!display.textContent.includes('.')) {
     displayUpdate(dotBtn.textContent);
   }})
+
+
+  deleteBtn.addEventListener('click', ()=>{
+      if (display.textContent.length === 1 || display.textContent === "0") {
+    display.textContent = "0";
+  } 
+  else {
+    display.textContent = display.textContent.slice(0, -1);
+  }
+  
+
+  currentInput = display.textContent;
+ 
+  if (!display.textContent.includes('.')) {
+    dotBtn.disabled = false;
+  }
+  })
