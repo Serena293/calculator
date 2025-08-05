@@ -30,5 +30,3 @@ A simple and responsive web-based calculator that allows users to perform basic 
 
 ## Live Demo
 
-## Live Demo
-(If hosted, you can paste the link here)
