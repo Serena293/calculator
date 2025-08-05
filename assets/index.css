@@ -79,11 +79,20 @@ button {
   background-color: #f4a9c1;
 }
 
-.operator:nth-child(5) {
+.equal{
   background-color: #ff8c42;
   color: white;
 }
 
-.operator:nth-child(5):hover {
-  background-color: #e6762f;
+.equal:hover {
+  background-color: #724a31;
 }
+
+.clear{
+  background-color: #d78f8f;
+}
+
+
+/* .operator.selected {
+  background-color: #d85fa0; 
+} */
