@@ -1,9 +1,11 @@
 const operatorArray = Array.from(document.querySelectorAll('.operator'));
 const numberArray = Array.from(document.querySelectorAll('.number'));
+let result = []
 
 const display = document.querySelector('.screen');
 
 let whateverNumber;
+let chosenOperator;
 let whateverNumber1 = null;
 function displayUpdate(element) {
   if (display.textContent === '0') {
@@ -21,7 +23,10 @@ numberArray.forEach(number => {
 });
 operatorArray.forEach(operators => {
   operators.addEventListener('click', () => {
-    // let a = operators.textContent;
-    // console.log(a);
+     result.push(whateverNumber);
+     console.log(result);
+     chosenOperator = displayUpdate(operators);
+     result.push(operators.textContent)
+     console.log(operators);
   });
 });
