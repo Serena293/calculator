@@ -31,8 +31,15 @@ body {
   align-items: center;
   justify-content: flex-end;
   font-size: 2rem;
-  overflow-x: auto;
+  /* overflow-x: auto; */
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
 }
+
+
 
 .buttons {
   display: flex;
