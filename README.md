@@ -22,11 +22,6 @@ A simple and responsive web-based calculator that allows users to perform basic 
 4. Press `=` to get the result.
 5. Use `Clear` to reset the calculator at any time.
 
-## Future Improvements
-- Add support for keyboard input
-- Implement decimal numbers and percentage functionality
-- Add a dark/light theme toggle
-- Add memory functions (M+, M−, MR)
 
 ## Live Demo
 
