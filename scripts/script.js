@@ -1,7 +1,9 @@
 const operatorArray = Array.from(document.querySelectorAll(".operator"));
-const numberArray = Array.from(document.querySelectorAll(".number"));
+const numberArray = Array.from(document.querySelectorAll(".number:not(.dot)"));
 const clearBtn = document.querySelector(".clear");
 const equalBtn = document.querySelector(".equal");
+
+const dotBtn = document.querySelector(".dot")
 
 const display = document.querySelector(".screen");
 
@@ -10,6 +12,7 @@ let firstNumber = null;
 let secondNumber = null;
 let operatorSelected = null;
 let resetScreen = false;
+let btnDisable =  false;
 
 function clear() {
   display.textContent = "0";
@@ -36,7 +39,7 @@ numberArray.forEach(number => {
     displayUpdate(number.textContent);
     console.log(`Selected number ${number.textContent}`)
   });
-});
+});2
 
 operatorArray.forEach(operator => {
   operator.addEventListener("click", () => {
@@ -54,7 +57,6 @@ operatorArray.forEach(operator => {
 });
 
 function operate() {
-
   console.log(`operate() is called`)
   secondNumber = parseFloat(display.textContent);
   let result;
@@ -94,3 +96,7 @@ equalBtn.addEventListener("click", () => {
 });
 
 clearBtn.addEventListener("click", clear);
+dotBtn.addEventListener("click", ()=>{ 
+  if (!display.textContent.includes('.')) {
+    displayUpdate(dotBtn.textContent);
+  }})
