@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom right, #f7d9e3, #ffe5b4);
+ 
 }
 
 .calculator {
@@ -30,12 +31,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 2rem;
-  /* overflow-x: auto; */
+  font-size: 1.5rem;
+  overflow-x: auto;
 
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 
 }
 
@@ -100,6 +98,6 @@ button {
 }
 
 
-/* .operator.selected {
-  background-color: #d85fa0; 
-} */
+.selected {
+  background-color: #f4a9c1; 
+}
