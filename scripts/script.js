@@ -15,7 +15,6 @@ let operatorSelected = null;
 let resetScreen = false;
 let btnDisable = false;
 
-// let selectedNumber = null;
 
 function clear() {
   display.textContent = "0";
@@ -71,7 +70,12 @@ operatorArray.forEach((operator) => {
 });
 
 function operate() {
-  console.log(`operate() is called`);
+  if (typeof firstNumber !== "number" || isNaN(firstNumber)) {
+    display.textContent = "Error";
+    operatorSelected = null;
+    return;
+  }
+
   secondNumber = parseFloat(display.textContent);
   let result;
 
@@ -87,23 +91,33 @@ function operate() {
       break;
     case "/":
       if (secondNumber === 0) {
-        result = "Error";
-        break;
+        result = "can't divide by zero";
+      } else {
+        result = firstNumber / secondNumber;
       }
-      result = firstNumber / secondNumber;
       break;
     default:
       return;
   }
 
-  display.textContent = result;
-  currentInput = result.toString();
-  firstNumber = result;
+  if (result === "can't divide by zero") {
+    display.textContent = result;
+    currentInput = result;
+    firstNumber = NaN;
+  } else {
+    display.textContent = parseFloat(result.toFixed(4));
+    currentInput = result.toString();
+    firstNumber = result;
+  }
+
   operatorSelected = null;
   resetScreen = true;
 }
 
+
+
 equalBtn.addEventListener("click", () => {
+ if (display.textContent === "Error") return; 
   if (operatorSelected && firstNumber !== null) {
     operate();
   }

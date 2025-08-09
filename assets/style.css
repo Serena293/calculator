@@ -35,7 +35,6 @@ body {
 }
 
 
-
 .buttons {
   display: flex;
   flex-direction: column;
@@ -101,7 +100,37 @@ button {
 
 footer {
   position: fixed;
-  bottom: 90px;
-  width: 100%;
-  text-align: center;
+  bottom: 20px;
+  right: 20px;
+}
+
+footer .legend {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  max-width: 250px;
+  line-height: 1.4;
+}
+
+footer .legend p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+footer .legend ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .legend li {
+  margin-bottom: 0.3rem;
+}
+
+footer .legend code {
+  background-color: #f1f1f1;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-family: monospace;
 }
