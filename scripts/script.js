@@ -27,7 +27,12 @@ function clear() {
 }
 
 function displayUpdate(value) {
-  if (display.textContent === "0" || resetScreen) {
+  if (
+    display.textContent === "0" ||
+    resetScreen ||
+    display.textContent === "can't divide by zero" ||
+    display.textContent === "Error"
+  ) {
     display.textContent = value;
     resetScreen = false;
   } else {
@@ -35,10 +40,9 @@ function displayUpdate(value) {
   }
   currentInput = display.textContent;
 
-  operatorArray.forEach(operator => operator.classList.remove('selected'))
-   
-  console.log(`CurrentInput: ${currentInput}`);
+  operatorArray.forEach(operator => operator.classList.remove('selected'));
 }
+
 
 numberArray.forEach((number) => {
   number.addEventListener("click", () => {
